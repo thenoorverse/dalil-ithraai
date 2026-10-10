@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدليل الإثرائي الشامل | مرجع معلم التعليم العام في ثقافة ذوي الإعاقة</title>
+<style>
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1b2a3a; --muted:#5b6b7f;
+  --teal:#0e6e6b; --teal-d:#0a4f4d; --gold:#c9a227; --gold-l:#fdf6dd;
+  --line:#e3e9f0; --ok:#15803d; --bad:#b91c1c; --radius:16px;
+  --shadow:0 10px 30px rgba(14,110,107,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9}
+a{color:inherit}
+.topbar{position:fixed;top:0;right:0;left:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1200px;margin:auto;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.brand-mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;display:grid;place-items:center;font-size:22px}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:12px;line-height:1.4}
+nav.main{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap}
+nav.main a{padding:8px 12px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:600;color:#33475d}
+nav.main a.active,nav.main a:hover{background:var(--teal);color:#fff}
+#menuBtn{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 12px;font-weight:700;cursor:pointer}
+.progress{height:3px;background:linear-gradient(90deg,var(--gold),var(--teal));width:0}
+.hero{margin-top:64px;background:radial-gradient(1000px 400px at 80% 0%,#d9f0ee,transparent),linear-gradient(135deg,#0e6e6b,#0a4f4d);color:#fff;padding:56px 16px 40px}
+.wrap{max-width:1200px;margin:auto;padding:0 16px}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+.eyebrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:999px;font-size:13px}
+h1{font-size:clamp(26px,4vw,42px);line-height:1.5;margin:14px 0 8px}
+.hero p.sub{color:#e6f3f2;margin:0 0 18px;font-size:17px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.badge{background:#fff;color:var(--teal-d);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700}
+.hero-card{background:#fff;color:var(--ink);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.hero-card h3{margin:0 0 10px;color:var(--teal-d)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:14px}
+.kv b{color:var(--teal-d)}
+.btn{display:inline-block;border:0;cursor:pointer;border-radius:12px;padding:12px 20px;font-weight:800;text-decoration:none;font-size:15px}
+.btn-gold{background:var(--gold);color:#222}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-ghost{background:#eef4f3;color:var(--teal-d)}
+section{padding:36px 0 8px}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.sec-num{width:44px;height:44px;border-radius:14px;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:900;font-size:20px;flex-shrink:0}
+.sec-head h2{margin:0;font-size:24px;color:var(--teal-d)}
+.sec-head p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.pill{display:inline-block;background:#eef6f5;color:var(--teal-d);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700}
+ul.tight{margin:8px 0;padding-inline-start:20px}
+ul.tight li{margin:4px 0}
+.axes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.axis{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-decoration:none;transition:.2s}
+.axis:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--teal)}
+.axis b{color:var(--teal-d)}
+.axis span{color:var(--muted);font-size:13px;display:block}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
+.toolbar input[type=search]{flex:1;min-width:220px;border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:15px}
+.fbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700;font-size:13px}
+.fbtn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;transition:.2s}
+.cat:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:var(--shadow)}
+.cat h3{margin:6px 0;font-size:17px;color:var(--teal-d)}
+.cat p{margin:0;color:var(--muted);font-size:13px}
+.cat .n{width:34px;height:34px;border-radius:10px;background:var(--gold-l);border:1px solid #ecd98a;display:grid;place-items:center;font-weight:900}
+.modal{position:fixed;inset:0;background:rgba(10,30,29,.55);display:none;z-index:80;padding:18px}
+.modal.open{display:grid;place-items:center}
+.sheet{background:#fff;border-radius:20px;max-width:860px;width:100%;max-height:90vh;overflow:auto;padding:0}
+.sheet-h{position:sticky;top:0;background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;padding:18px 20px;display:flex;align-items:center;gap:10px}
+.sheet-h h3{margin:0;flex:1}
+.x{background:#fff;border:0;border-radius:10px;width:36px;height:36px;cursor:pointer;font-size:18px}
+.sheet-b{padding:20px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tab{border:1px solid var(--line);background:#f2f7f6;border-radius:10px;padding:8px 14px;cursor:pointer;font-weight:700;font-size:14px}
+.tab.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.tabpane{display:none;background:#fbfdfd;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}
+.tabpane.active{display:block}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0}
+summary{cursor:pointer;font-weight:800;color:var(--teal-d)}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden}
+th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:right}
+th{background:var(--teal-d);color:#fff}
+tr:nth-child(even) td{background:#f7faf9}
+.timeline{display:grid;gap:10px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.step .dot{width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:900}
+.density{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.dbox{background:linear-gradient(180deg,#fff,#f0f8f7);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.dbox b{font-size:30px;color:var(--teal-d);display:block}
+.quiz-q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+.quiz-q .opts{display:flex;gap:10px;margin-top:8px}
+.opt{border:1px solid var(--line);border-radius:10px;padding:8px 16px;cursor:pointer;font-weight:700;background:#f8fbfb}
+.opt.sel-true{background:#dcfce7;border-color:var(--ok)} .opt.sel-false{background:#fee2e2;border-color:var(--bad)}
+.feedback{font-size:14px;margin-top:8px;display:none}
+.case{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:10px 0}
+.ans{display:none;background:#f0fdf4;border:1px dashed var(--ok);border-radius:10px;padding:10px 14px;margin-top:10px;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.stat b{font-size:32px;color:var(--teal-d)}
+#toTop{position:fixed;bottom:18px;left:18px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--teal-d);color:#fff;font-size:22px;cursor:pointer;display:none;box-shadow:var(--shadow)}
+footer{background:#0a2e2d;color:#d7e8e7;padding:30px 16px;margin-top:36px}
+footer a{color:#ffe9a8}
+.note{background:var(--gold-l);border:1px solid #ecd98a;border-radius:12px;padding:12px 16px;font-size:14px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.axes,.cats,.g3,.g4,.density,.stats{grid-template-columns:1fr 1fr}nav.main{display:none;width:100%}nav.main.open{display:flex;flex-direction:column}#menuBtn{display:block}.g2{grid-template-columns:1fr}}
+@media(max-width:560px){.axes,.cats,.g3,.g4,.density,.stats{grid-template-columns:1fr}}
+@media print{.topbar,#toTop,.toolbar,.tabs{display:none}body{background:#fff}.hero{color:#000;background:#fff}.hero-card{box-shadow:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand"><div class="brand-mark">📖</div><div>الدليل الإثرائي الشامل<small>مرجع إثرائي لمعلم التعليم العام • عسير</small></div></div>
+    <button id="menuBtn">☰ الأقسام</button>
+    <nav class="main" id="mainNav">
+      <a href="#home">الرئيسية</a><a href="#goals">عن الدليل وخارطته</a><a href="#terms">المفاهيم</a>
+      <a href="#eval">الكشف والتقييم</a><a href="#cats">الفئات 12</a><a href="#rule7">القاعدة 7</a>
+      <a href="#iep">الفردي ودورك</a><a href="#apply">تأمل وتعمّق</a><a href="#refs">المراجع</a>
+    </nav>
+  </div>
+  <div class="progress" id="progress"></div>
+</div>
+
+<header class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">دليل إثرائي • الإدارة العامة للتعليم بمنطقة عسير</span>
+      <h1>الدليل الإثرائي لمعلم التعليم العام في التعامل مع الطلاب من ذوي الإعاقة</h1>
+      <p class="sub">مرجع إثرائي تفاعلي مختصر وشامل — خلاصة المحتوى المعتمد: الدليل التنظيمي (الإصدار الثاني) والقاعدة السابعة من لائحة التقويم 2025، بصياغة مبسطة للقراءة والتأمل المهني.</p>
+      <div class="badges">
+        <span class="badge">📖 6 أقسام معرفية</span><span class="badge">💡 11 مفهوماً مؤسساً</span>
+        <span class="badge">👥 12 فئة إعاقة</span><span class="badge">📋 الفردي وقواعد التقويم</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-gold" href="#cats">استكشف الفئات الـ12</a>
+        <a class="btn btn-teal" style="background:#fff;color:var(--teal-d)" href="#apply">تأمل وقيّم فهمك</a>
+        <button class="btn btn-ghost" onclick="window.print()">🖨 طباعة الدليل</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>عن هذا الدليل الإثرائي</h3>
+      <div class="kv">
+        <b>إعداد المحتوى:</b><span>أ/ رحمة سعيد الأحمري — مشرفة ذوي الإعاقة، تنمية القدرات، عسير</span>
+        <b>لمن هذا الدليل؟</b><span>لمعلمي التعليم العام بجميع المراحل في مدارس الدمج، وكل مهتم بثقافة التعامل مع ذوي الإعاقة</span>
+        <b>أسلوب العرض:</b><span>إثراء معرفي مبسط: مفاهيم، بطاقات فئات، جداول مقارنة، ومواقف للتأمل ومراجعة ذاتية</span>
+        <b>المرجعية:</b><span>الدليل التنظيمي (1448/1449هـ) + القاعدة السابعة (ص 23–31)</span>
+      </div>
+      <div class="stats" style="margin-bottom:0">
+        <div class="stat"><b data-count="12">12</b><div>فئة إعاقة</div></div>
+        <div class="stat"><b data-count="6">6</b><div>أقسام معرفية</div></div>
+        <div class="stat"><b data-count="11">11</b><div>مفهوماً مؤسساً</div></div>
+        <div class="stat"><b data-count="17">17</b><div>بنداً في القاعدة 7</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="goals">
+  <div class="sec-head"><div class="sec-num">1</div><div><h2>عن الدليل وخارطته المعرفية</h2><p>دليل للقراءة والاستنارة المهنية — وليس حقيبة تدريبية — فتصفحه بحرية وبتأنٍّ</p></div></div>
+  <div class="card" style="margin-bottom:12px"><span class="pill">💡 كيف تستفيد من هذا الدليل؟</span>
+    <p style="margin:8px 0 0;font-size:15px">هذا محتوى <b>إثرائي توعوي</b> يثري ثقافتك حول ذوي الإعاقة: اقرأ المفاهيم أولاً، ثم تعرّف على الفئات وبطاقاتها، ثم تأمل قواعد التقويم ودورك فيها، وأخيراً توقف عند المواقف والمراجعة الذاتية لترسيخ فهمك — دون أي متطلبات تدريبية أو اختبارات ملزمة.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card"><span class="pill">ماذا يقدم لك هذا الدليل؟ — 6 إضاءات معرفية</span>
+      <ul class="tight">
+        <li>تتعرف على الإطار التنظيمي والمفاهيم المؤسسة لثقافة الدمج.</li>
+        <li>تفرّق بين الفئات الـ12 وتفهم خصائص كل فئة.</li>
+        <li>تفهم مسار الكشف والتقييم وشروط الأهلية لكل فئة.</li>
+        <li>تتعرف على البيئة التعليمية الأنسب لكل فئة وفق <b>البيئة الأقل تقييداً</b>.</li>
+        <li>تطلع على تيسيرات التقويم الواردة في القاعدة السابعة.</li>
+        <li>تتعرف على فكرة البرنامج التعليمي الفردي ودورك المهني فيه.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="pill">المرجعية المعرفية — كيف تقرأ الدليل؟</span>
+      <ul class="tight">
+        <li><b>الدليل التنظيمي:</b> مصدر الفئات وشروط قبولها والبيئة التعليمية والبرنامج الفردي.</li>
+        <li><b>القاعدة السابعة:</b> مصدر تيسيرات التقويم لكل فئة (بنود 7-1 إلى 7-17).</li>
+        <li>صدرت اللائحة بموافقة الوزير رقم 4601120435 بتاريخ 1447/2/10هـ.</li>
+      </ul>
+      <div class="note">أرقام مثل (7-2-5) هي بنود القاعدة السابعة، وأرقام الصفحات من الوثيقتين المطبوعتين.</div>
+    </div>
+  </div>
+  <h3 style="color:var(--teal-d)">أقسام الدليل الستة — خارطة تنقل</h3>
+  <div class="axes">
+    <a class="axis" href="#terms"><b>1 • المفاهيم المؤسسة</b><span>المرجعيات، ودلالات الدليل، 11 مفهوماً</span></a>
+    <a class="axis" href="#eval"><b>2 • رحلة الكشف والتقييم</b><span>6 محطات، 8 ضوابط، الكثافة والتوجيه</span></a>
+    <a class="axis" href="#cats"><b>3 • الفئات الحسية والفكرية والتوحد</b><span>الفئات 1–5</span></a>
+    <a class="axis" href="#cats"><b>4 • الصعوبات والاضطرابات الأخرى</b><span>الفئات 6–12</span></a>
+    <a class="axis" href="#rule7"><b>5 • ثقافة التقويم (القاعدة 7)</b><span>المبادئ + جدولا الأهلية والتيسيرات</span></a>
+    <a class="axis" href="#iep"><b>6 • الفردي ودورك المهني</b><span>الفكرة، المكونات، ومواقف للتأمل</span></a>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="sec-head"><div class="sec-num">2</div><div><h2>مفاهيم تؤسس ثقافتك المهنية</h2><p>لغة مبسطة للفهم والاستنارة — اضغط أي مفهوم للتوسع في دلالته</p></div></div>
+  <div class="grid g2">
+    <div class="card"><span class="pill">ما الغاية من الدليل التنظيمي؟</span>
+      <b>يُعنى بـ:</b>
+      <ul class="tight"><li>تنظيم العمل المؤسسي في المعاهد والمراكز والبرامج.</li><li>تعزيز الوعي بحقوق ذوي الإعاقة.</li><li>رفع الكفاءة النوعية وجودة الخدمات المساندة.</li><li>مواكبة المستجدات، وتحديد الأدوار والتعاون.</li></ul>
+      <b>أهميته:</b>
+      <ul class="tight"><li>تكافؤ الفرص دون تمييز وفق التشريعات والاتفاقيات.</li><li>تعزيز الاندماج وتقبل الفروق الفردية.</li><li>الوصول الشامل في البيئة الأقل تقييداً حسب كل إعاقة.</li></ul>
+    </div>
+    <div>
+      <details open><summary>الطالب ذو الإعاقة + التشخيص + التقييم</summary><p><b>ذو الإعاقة:</b> اضطراب أو قصور طويل الأمد (جسدي/عقلي/ذهني/حسي/نفسي) يستوجب خدمات مساندة. <b>التشخيص:</b> تحديد نوع الإعاقة ودرجة الذكاء من الجهات المختصة. <b>التقييم:</b> تقييم شامل (نفسي/اجتماعي/تعليمي) لبناء الخطة الفردية.</p></details>
+      <details><summary>الفريق متعدد التخصصات + التدخل المبكر + الفردي</summary><p><b>الفريق:</b> مختصون نفسيون واجتماعيون وتعليميون بمشاركة الأسرة. <b>التدخل المبكر:</b> إجراءات منظمة لمن هم دون السادسة المتأخرين نمائياً أو المعرضين للخطر. <b>الفردي:</b> وثيقة ملزمة تجمع الأطراف وتستند للتشخيص.</p></details>
+      <details><summary>البيئة الأقل تقييداً + الدمج الكلي + الدمج المكاني</summary><p><b>الأقل تقييداً:</b> التعلم مع الأقران بأقصى قدر ممكن. <b>الكلي:</b> داخل فصول التعليم العام مع البرنامج الفردي والدعم. <b>المكاني:</b> فصول ملحقة بمدارس التعليم العام مع المشاركة في المجتمع المدرسي.</p></details>
+      <details><summary>غرفة المصادر + الخدمات المساندة + التقنيات المساعدة</summary><p><b>المصادر:</b> التحاق لا يزيد عن نصف اليوم لخدمات خاصة. <b>المساندة:</b> تيسير التغلب على آثار الإعاقة (حركي/وظيفي/تواصلي/اجتماعي/نفسي). <b>المساعدة:</b> أجهزة وبرامج تمكّن من التعلم المستقل والمشاركة.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="eval">
+  <div class="sec-head"><div class="sec-num">3</div><div><h2>رحلة الطالب: من الكشف إلى المتابعة</h2><p>فهمٌ إثرائي للمسار الرسمي — لتدرك أين يقف دورك كمعلم</p></div></div>
+  <div class="card"><span class="pill">محطات الرحلة الست</span><div class="timeline" style="margin-top:10px">
+    <div class="step"><div class="dot">1</div><div><b>الكشف:</b> تقرير طبي من الصحة يثبت الإعاقة؛ وصعوبات التعلم من سجلات المعلم وملاحظاته.</div></div>
+    <div class="step"><div class="dot">2</div><div><b>الإحالة:</b> من المدرسة أو ولي الأمر إلى مراكز الخدمات المساندة والمراكز المعتمدة عند الحاجة.</div></div>
+    <div class="step"><div class="dot">3</div><div><b>التقييم:</b> جمع المعلومات بأدوات رسمية وغير رسمية وتحليلها من الفريق متعدد التخصصات.</div></div>
+    <div class="step"><div class="dot">4</div><div><b>الأهلية:</b> تحديد الأهلية والمكان والخدمات حسب الفئة ونتائج التقييم.</div></div>
+    <div class="step"><div class="dot">5</div><div><b>تقديم الخدمات:</b> بما يتواءم مع البرنامج التعليمي الفردي.</div></div>
+    <div class="step"><div class="dot">6</div><div><b>المتابعة:</b> متابعة الأهلية والاستفادة من البرامج والخدمات.</div></div>
+  </div></div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card"><span class="pill">ضوابط التقييم — 8 إضاءات تنظيمية</span>
+      <ul class="tight"><li>الإحالة بعد موافقة خطية وإشعار رسمي.</li><li>الرد خلال <b>14 يوماً</b> مع تذكير خلال <b>7 أيام</b>؛ وعدم الرد يُعد موافقة.</li><li>الملاحظة فصلاً كاملاً عند الحاجة؛ وأدوات موثقة معتمدة.</li><li>إعادة التقييم عند الحاجة بعد <b>6 أشهر</b> فأكثر.</li><li>سرية البيانات — للفريق فقط.</li><li>إتمام التقييم واجتماع الفردي خلال <b>30 يوم عمل</b>؛ وتمديد الإجازات/الصحية أسبوعين كحد أقصى.</li></ul>
+    </div>
+    <div class="card"><span class="pill">ماذا لو رُفضت الإحالة أو النتائج؟</span>
+      <ul class="tight"><li>توعية من المدرسة والفريق بأهمية الإحالة.</li><li>ينظر قسم ذوي الإعاقة في الأسباب بالتنسيق مع التوجيه الطلابي.</li><li>عند الرفض التام من الولي تُحال الحالة إلى <b>الإدارة العامة للحماية من العنف الأسري وحماية الطفل</b>.</li><li>رفض النتائج: توعية + توثيق أدلة ورفعها للقسم ثم نفس المسار.</li></ul>
+      <span class="pill">للتوسع: السن والتدخل المبكر</span>
+      <ul class="tight"><li>التدخل المبكر: متأخرون نمائياً / ذوو إعاقة / معرضون لخطر (3 عوامل+) — العمر ≤ <b>3 سنوات</b> للحضانة.</li><li>السن النظامي ملزم؛ ويُستثنى ذو الإعاقة بما لا يزيد على <b>3 سنوات</b> دون هدر حقوق الآخرين.</li><li>تجاوز السن → التعليم المستمر؛ والمحوَّل من العام يُقبل في الصف الملائم لقدراته ببرنامج فردي.</li></ul>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card"><span class="pill">أين يتعلم كل طالب؟ — صور الدمج</span>
+      <ul class="tight"><li><b>دمج كلي</b> (فصل عام + مصادر): ضعاف السمع، ضعاف البصر، توحد عالي الأداء، صعوبات، حدي، فرط حركة، لغة وكلام.</li><li><b>دمج مكاني</b> (فصل خاص ملحق): فكرية، توحد منخفض، تعدد، صم مكفوفون، صم.</li><li><b>معاهد/مراكز</b> (صم، مكفوفين، فكرية، توحد): لمن لا يمكن دمجه ويحتاج برنامجاً يتوافق مع قدراته.</li></ul>
+    </div>
+    <div class="card"><span class="pill">أعداد استرشادية للكثافة الصفية</span><div class="density">
+      <div class="dbox"><b>30</b>أقصى فصل الدمج الكلي</div><div class="dbox"><b>25%</b>سقف ذوي الإعاقة في فصل الدمج</div>
+      <div class="dbox"><b>10</b>فكرية + صم (خاص/معاهد)</div><div class="dbox"><b>5</b>توحد منخفض الأداء</div>
+      <div class="dbox"><b>5</b>تعدد الإعاقة</div><div class="dbox"><b>3</b>صم مكفوفون في فصلهم</div>
+    </div></div>
+  </div>
+</section>
+
+<section id="cats">
+  <div class="sec-head"><div class="sec-num">4</div><div><h2>بطاقات الفئات الـ12: فهمٌ مختصر لكل فئة</h2><p>ابحث أو صفِّ حسب المجموعة، ثم اضغط أي بطاقة لقراءة لمحتها الإثرائية</p></div></div>
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="🔍 ابحث: برايل، قوقعة، 70، غرفة المصادر...">
+    <button class="fbtn active" data-f="all">الكل</button>
+    <button class="fbtn" data-f="sens">حسية</button>
+    <button class="fbtn" data-f="dev">فكرية ونمائية</button>
+    <button class="fbtn" data-f="beh">سلوكية وتواصلية</button>
+    <button class="fbtn" data-f="multi">متعددة وجسمية</button>
+  </div>
+  <div class="cats" id="catGrid"></div>
+  <div class="note" style="margin-top:12px">تنظيم معرفي للفئات: حسية (1–3) • فكرية ونمائية (4–6) • سلوكية وتواصلية (7–10) • متعددة وجسمية (11–12). والأرقام مثل 7-2-5 تحيل إلى بنود القاعدة السابعة للاستزادة.</div>
+</section>
+
+<section id="rule7">
+  <div class="sec-head"><div class="sec-num">5</div><div><h2>ثقافة التقويم: القاعدة السابعة باختصار</h2><p>مبادئ عامة وتيسيرات مرنة — لتفهم روح التقويم لا لتطبقه وحدك</p></div></div>
+  <div class="grid g3">
+    <div class="card"><span class="pill">النطاق والمبادئ (7-1 إلى 7-6)</span><ul class="tight">
+      <li><b>7-1:</b> كتابية وشفوية وعملية لقياس المعلومات المستهدفة.</li><li><b>7-2:</b> ملاحظة وقوائم شطب وتقدير سلوك للمهارات.</li><li><b>7-3:</b> اختبارات بأنواعها للتقدم أو الاستقرار.</li><li><b>7-4:</b> خصوصية الأدوات لكل فئة.</li><li><b>7-5:</b> الزمن الكافي حسب القدرات الكتابية/القرائية.</li><li><b>7-6:</b> أماكن مناسبة، فردي أو جماعي حسب الاحتياج.</li></ul></div>
+    <div class="card"><span class="pill">المرونة (7-7 إلى 7-13)</span><ul class="tight">
+      <li><b>7-7:</b> عدم الالتزام بالمواعيد عند الضرورة بالتنسيق.</li><li><b>7-8:</b> التقويم التكويني حسب القدرات.</li><li><b>7-9:</b> طريقة بديلة وتوزيع درجات بالتنسيق عند تعذر الأدوات.</li><li><b>7-10:</b> مراعاة كل فئة عند تعدد الاحتياجات.</li><li><b>7-11:</b> مادة تحريرية واحدة يومياً + الزمن والدعم.</li><li><b>7-13:</b> تجزئة التقويم/المادة لأجزاء صغيرة.</li></ul></div>
+    <div class="card"><span class="pill">الفردي والإعفاء (7-12، 7-14 إلى 7-17)</span><ul class="tight">
+      <li><b>7-12:</b> متعددو الإعاقة يُقوَّمون وفق خططهم الفردية.</li><li><b>7-14:</b> من لم يستفد من الفصل يُقوَّم في محتوى خطته بأسئلة التربية الخاصة بالتنسيق.</li><li><b>7-15:</b> إعادة توزيع درجة المهارة المتعذرة (ترتيل/استماع/محادثة) داخل المادة.</li><li><b>7-16:</b> إعفاء من المفاهيم المجردة عند الحاجة.</li><li><b>7-17:</b> إشراف التربية الخاصة بالتعاون مع معلم العام — في جميع الحالات.</li></ul></div>
+  </div>
+  <h3 style="color:var(--teal-d)">جدول الأهلية والبيئة التعليمية (خلاصة مقارنة)</h3>
+  <div class="card" style="overflow:auto"><table id="t1">
+    <tr><th>الفئة</th><th>شرط الأهلية الرئيس</th><th>المكان التعليمي</th></tr>
+  </table></div>
+  <h3 style="color:var(--teal-d)">جدول أبرز التيسيرات التقويمية (للاستنارة)</h3>
+  <div class="card" style="overflow:auto"><table id="t2">
+    <tr><th>الفئة</th><th>أبرز التيسيرات</th><th>البنود</th></tr>
+  </table></div>
+</section>
+
+<section id="iep">
+  <div class="sec-head"><div class="sec-num">6</div><div><h2>البرنامج التعليمي الفردي ودورك المهني</h2><p>فكرة الوثيقة وشركاؤها — وما الذي يُنتظر منك كمعلم عام؟</p></div></div>
+  <div class="grid g2">
+    <div class="card"><span class="pill">ما فكرة البرنامج الفردي؟ وما غاياته؟</span>
+      <p>وثيقة أساسية ملزمة تجمع الطالب والفريق متعدد التخصصات والأسرة، تحدد الخدمات التعليمية والمساندة والانتقالية، وتستند للتشخيص والقياس.</p>
+      <ul class="tight"><li>حماية حق الطالب والأسرة في الخدمات المناسبة.</li><li>تحديد نوعية الخدمة وكميتها وإجراءاتها لكل طالب.</li><li>التواصل بين الجهات والأسرة، وقياس تقدم الطالب.</li></ul>
+    </div>
+    <div class="card"><span class="pill">مكونات البرنامج في لمحة</span>
+      <ul class="tight"><li><b>1.</b> معلومات أولية: بيانات الطالب والمدرسة والفئة وتاريخ الالتحاق وملخص الحالة.</li><li><b>2.</b> مستوى الأداء الحالي: ما يستطيعه + القوة والاحتياج.</li><li><b>3.</b> الخطط: أسرية + تعليمية فردية + مساندة + انتقالية.</li><li><b>4.</b> الأهداف: طويلة المدى + قصيرة قابلة للقياس + سلوكية تدريسية.</li><li><b>5.</b> الخدمات: من يقدمها + المعينات والتأهيل والتوجيه.</li><li><b>6.</b> التقييم: معايير وإجراءات وجداول زمنية + مراجعة سنوية/نصف سنوية.</li></ul>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card"><span class="pill">ملامح إعداد البرنامج — للفهم العام</span><ul class="tight">
+      <li>الإعداد خلال <b>أسبوعين</b> من نتائج التقييم، والتنفيذ خلال <b>أسبوع</b> من الإعداد.</li><li>يُعد لكل طالب أياً كانت إعاقته أو مكانه.</li><li>يُبنى على التشخيص الطبي/النفسي والأداء الحالي.</li><li>عمل الفريق + مشاركة الأسرة في الإعداد والتنفيذ والمتابعة والاعتماد.</li><li>فترة زمنية محددة + تقويم مستمر ونهائي + حفظ آمن وسرية.</li></ul></div>
+    <div class="card"><span class="pill">دورك كمعلم تعليم عام — 4 إسهامات</span><ul class="tight">
+      <li><b>التكييف:</b> التعاون مع التربية الخاصة في التكيفات والمواءمات والتعديلات.</li><li><b>الاختبارات:</b> إعداد الأسئلة والنموذجية المناسبة بالتعاون.</li><li><b>التقويم (7-14):</b> التشاور لمن لم يستفد من الفصل وتقويمه وفق خطته.</li><li><b>الإشراف (7-17):</b> التعاون مع مشرف التقويم (معلم التربية الخاصة).</li></ul></div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="sec-head"><div class="sec-num">★</div><div><h2>وقفات للتأمل والتعمق</h2><p>مواقف صفية ومراجعة ذاتية بأسلوب إثرائي — للتفكر المهني لا للاختبار</p></div></div>
+
+  <div class="case"><span class="pill">موقف للتأمل (1) — سارة: طالبة ضعيفة السمع في الصف الخامس</span>
+    <p><b>الموقف:</b> فقدان سمعي جزئي، واختبار لغة عربية يتضمن مهارة استماع تُقرأ بصوت مسموع وأسئلة مقالية مركبة بصياغة معقدة. <b>أسئلة للتأمل:</b> ما التعديلات المناسبة للاختبار؟ ما أساليب التواصل الممكنة؟ وهل تُحاسَب على الأخطاء الإملائية؟</p>
+    <button class="btn btn-teal" onclick="tog('a1')">عرض الإضاءة الإثرائية</button>
+    <div class="ans" id="a1">استبدال الاستماع بنص مكتوب أو صورة (7-2-8) • أسئلة موضوعية مباشرة وتجنب المركبة والمجردة (7-2-3) • التواصل: شفاه/إشارة/تلميح/أصابع/كلي/كتابة/حاسب (7-2-2) • <b>لا تُحاسب على الإملاء والنحو</b> (7-2-5). المرجع: 7-2-1 إلى 7-2-9.</div>
+  </div>
+  <div class="case"><span class="pill">موقف للتأمل (2) — فهد: طالب لديه فرط حركة وتشتت انتباه</span>
+    <p><b>الموقف:</b> طالب في الثالث المتوسط بذكاء 95، يصعب عليه البقاء في مقعده ويتشتت في الاختبارات الطويلة. <b>أسئلة للتأمل:</b> كيف تُهيَّأ بيئة الاختبار؟ وكيف يُوزَّع محتواه؟ ومن يساند المعلم عند الحاجة؟</p>
+    <button class="btn btn-teal" onclick="tog('a2')">عرض الإضاءة الإثرائية</button>
+    <div class="ans" id="a2">تقويم فردي بعيداً عن المشتتات / ركن خاص (7-4-7، 7-5-4) • توزيع المحتوى على فترات قصيرة (7-5-2) • السماح بالتحرك حسب قدرته (7-5-3) • وجود معلمة التربية الخاصة في الختامية عند الحاجة (7-5-5).</div>
+  </div>
+  <div class="case"><span class="pill">موقف للتأمل (3) — ماجد: طالب ذو ذكاء حدي 74</span>
+    <p><b>الموقف:</b> طالب في الثاني الابتدائي يرسب في معظم المواد لغير أسباب أسرية أو اجتماعية أو صحية، ومحوَّل لبرنامج يسير. <b>أسئلة للتأمل:</b> لماذا يستحق خدمات يسير؟ وأين يتعلم؟ وما معيار اجتيازه؟</p>
+    <button class="btn btn-teal" onclick="tog('a3')">عرض الإضاءة الإثرائية</button>
+    <div class="ans" id="a3"><b>نعم</b> (ذكاء 70–79 + تدني عام = أهلية يسير) • في صفوف التعليم العام (7-9-2) • النجاح: <b>30% صغرى في كل مادة</b> مع <b>15% من اختبار نهاية العام</b> + أداء اختبار الفترة، و<b>50%+ = متقن</b>، ودور ثانٍ إضافي واحد (7-9-13 إلى 7-9-17). وللأول والثاني: تخفيض الحدود وإمكانية إعادة التقويم بداية العام التالي.</div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <span class="pill">وقفة مراجعة ذاتية — هل العبارة صحيحة؟ (6 عبارات للتأمل)</span>
+    <div id="quiz"></div>
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+      <button class="btn btn-teal" onclick="grade()">عرض التغذية المعرفية</button>
+      <button class="btn btn-ghost" onclick="resetQ()">إعادة التأمل</button>
+      <b id="score" style="align-self:center;color:var(--teal-d)"></b>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px"><span class="pill">خلاصات إثرائية تختم بها قراءتك</span>
+    <ul class="tight"><li><b>فهم الفئة:</b> لكل فئة تعريفها وقبولها ومكانها.</li><li><b>الأقل تقييداً:</b> الأصل التعلم مع الأقران بأقصى قدر.</li><li><b>التقويم المتمايز:</b> حسب الاحتياج في الأدوات والزمن والمكان.</li><li><b>الشراكة:</b> مع التربية الخاصة والأسرة والفريق أساس نجاح الفردي.</li></ul>
+  </div>
+</section>
+
+<section id="refs">
+  <div class="sec-head"><div class="sec-num">📚</div><div><h2>المراجع والمصدر المعرفي</h2><p>توثيق إثرائي للمحتوى الذي بُني عليه الدليل</p></div></div>
+  <div class="card"><ul class="tight">
+    <li>وزارة التعليم – الإدارة العامة لبرامج ذوي الإعاقة: <b>الدليل التنظيمي لبرامج ذوي الإعاقة، الإصدار الثاني 1448/1449هـ</b>.</li>
+    <li>وزارة التعليم: <b>الإجراءات التنفيذية للائحة تقويم الطالب 2025 — القاعدة السابعة (ص 23–31)</b>، باعتماد الوزير رقم 4601120435 بتاريخ 1447/2/10هـ.</li>
+  </ul></div>
+</section>
+
+</div>
+
+<footer><div class="wrap">الدليل الإثرائي التفاعلي • مرجع المعلم في ثقافة ذوي الإعاقة • عسير<br>إعداد: أ/ رحمة سعيد الأحمري — مشرفة ذوي الإعاقة، بإدارة تنمية القدرات، عسير — <a href="#home">العودة للأعلى</a></div></footer>
+<button id="toTop" title="للأعلى">↑</button>
+
+<div class="modal" id="modal"><div class="sheet">
+  <div class="sheet-h"><h3 id="mTitle"></h3><button class="x" onclick="closeM()">✕</button></div>
+  <div class="sheet-b"><div class="tabs" id="mTabs"></div><div id="mBody"></div></div>
+</div></div>
+
+<script>
+const CATS=[
+{n:1,t:"الإعاقة السمعية",g:"sens",gname:"حسية",s:"أصم (70+ ديسيبل) • ضعيف سمع (35–69) • زارع قوقعة",def:"<b>الأصم:</b> فقدان يبدأ من 70 ديسيبل فأكثر بأفضل الأذنين بعد المعينات يحول دون الاعتماد على السمع. <b>ضعيف السمع:</b> فقدان جزئي 35–69 ديسيبل يسبب صعوبة فهم الكلام. <b>زارع القوقعة:</b> قوقعة إلكترونية تحول الأصوات لإشارات للعصب السمعي.",acc:"تقرير طبي رسمي معتمد لفحص السمع يحدد الفئة والدرجة + ألا توجد إعاقة أخرى تحول دون الاستفادة.",place:"<b>ضعاف السمع وزارعو القوقعة:</b> دمج كلي (فصل عام + مصادر). <b>الصم ومن لم تنجح زراعته:</b> فصل خاص (دمج مكاني) أو معاهد الصم عند تعذر الدمج.",ass:"اعتماد البصر ودرجة الفقدان (7-2-1) • تواصل: شفاه/إشارة/منغّم/تلميح/أصابع/كلي/كتابة/حاسب (7-2-2) • أسئلة موضوعية مباشرة وتجنب المقالية والمركبة والمجردة (7-2-3) • ترجمة الإشارة عند الحاجة (7-2-4) • <b>لا محاسبة على الإملاء والنحو</b> (7-2-5) • استبدال الشفهي كتابياً/إشارياً والاستماع بنص/صورة (7-2-7، 7-2-8).<br><span class='pill'>7-2-1 إلى 7-2-9 (ص 25–26)</span>"},
+{n:2,t:"الإعاقة البصرية",g:"sens",gname:"حسية",s:"كفيف (أقل من 6/60 أو مجال <20°) • ضعيف بصر (6/24–6/60)",def:"عجز في الجهاز البصري بين كف كلي وجزئي يؤثر في الرؤية والوظائف المرتبطة. <b>الكفيف:</b> حدة أقل من 6/60 (20/200) بعد التصحيح أو مجال أقل من 20°. <b>ضعيف البصر:</b> حدة 6/24–6/60 أو مجال 20–40°.",acc:"تقرير طبي معتمد يوضح الحدة والمجال ويحدد الفئة + ألا توجد إعاقة أخرى مانعة.",place:"<b>ضعاف البصر:</b> دمج كلي. <b>المكفوف:</b> دمج كلي مع مصادر + تطبيق الفردي عبر معلمي الإعاقة في مواد برايل (علوم/رياضيات/رقمية/إنجليزية) أو معاهد المكفوفين. يُراعى قرب السكن.",ass:"اللمس والسمع والبقايا (7-1-1) • برايل/شفهي/تسجيل/حاسب/قارئ مبصر (7-1-2) • عدسات وطباعة مكبرة (7-1-2) • <b>لجنة برايل</b> برئاسة المدير + مختص ترجمة + معلم المادة قبل الاختبارات بـ<b>أسبوعين</b> (7-1-3، 7-1-4) • تجهيز الأسئلة ببرايل/مكبر ونقل الإجابات للخط العادي (7-1-4) • نفس الأسئلة مع بدائل الخرائط وتكييف الصور ومراعاة المحوَّل حديثاً (7-1-5، 7-1-7، 7-1-8).<br><span class='pill'>7-1-1 إلى 7-1-8 (ص 24–25)</span>"},
+{n:3,t:"الحسية المزدوجة (الصم المكفوفون)",g:"sens",gname:"حسية",s:"صمم + كف بصر معاً • تعديلات سمعية وبصرية",def:"صمم وكف بصر معاً ينتج عنهما مشكلات تواصلية ونمائية وتعليمية، وتتطلب تعديلات خاصة في كل النماذج السمعية والبصرية.",acc:"تقرير طبي معتمد: فحص بصر (حدة ومجال – كفيف) + فحص سمع (أصم).",place:"فصل خاص بالمدرسة (دمج مكاني) لمن يحتاج برنامجاً يتوافق مع قدراته، أو فصول معاهد الصم/المكفوفين لمن يتطلب بقاءه. <b>السقف: 3 طلاب</b> في الفصل الخاص بهم.",ass:"مراعاة أساليب كل فئة (بصرية وسمعية) (7-10) • التقويم وفق الخطة الفردية (7-12) • أساليب التواصل المناسبة (7-3-5) • التجزئة لأجزاء صغيرة (7-13) • إعفاء المفاهيم المجردة (7-16) • إشراف التربية الخاصة مع العام (7-17)."},
+{n:4,t:"الإعاقة الفكرية",g:"dev",gname:"فكرية ونمائية",s:"ذكاء 55–69 (بينيه 5) • قابلون للتعلم • سقف 10",def:"قصور واضح في الأداء الفكري يصاحبه قصور في السلوك التكيفي (مفاهيمي/اجتماعي/عملي) في مجالين على الأقل. <b>الذكاء 55–69</b> (بينيه الخامسة أو ما يعادلها) – قابلون للتعلم.",acc:"تقرير طبي تشخيصي معتمد يوضح الدرجة + ألا تحول الشدة دون الاستفادة من البرنامج.",place:"فصل خاص بالمدرسة (دمج مكاني) أو معاهد التربية الفكرية عند ذكاء 55–69. <b>السقف: 10</b> في الفصل.",ass:"أدوات تناسب الخصائص وتعتمد الخطط الفردية أولاً (7-3-1) • تقويم تكويني/ملاحظة (7-3-2) • تقويم مناسب عند تعذر الاستفادة (7-3-3) • تجزئة لفترات قصيرة (7-3-4، 7-13) • إعفاء المجرد (7-16) • إشراف مشترك (7-17).<br><span class='pill'>7-3-1 إلى 7-3-5 + 7-12/13/16 (ص 26)</span>"},
+{n:5,t:"اضطراب طيف التوحد",g:"dev",gname:"فكرية ونمائية",s:"عالٍ (70+) دمج كلي • منخفض (55–69) فصل خاص/مراكز",def:"قصور مستمر في التواصل والتفاعل مع سلوكيات واهتمامات نمطية مبكرة يؤثر في التحصيل. <b>عالي الأداء:</b> دون فكرية (70+). <b>منخفض:</b> مصاحب لفكرية (55–69).",acc:"تقرير تشخيصي معتمد يوضح النوع والذكاء والفئة + ألا توجد إعاقة مانعة أخرى.",place:"<b>عالي/بسيط:</b> دمج كلي (فصل عام + مصادر + دعم). <b>منخفض/متوسط:</b> فصل خاص أو معاهد/مراكز التوحد عند اضطرابات مصاحبة، <b>بحد أقصى 5</b>.",ass:"التكامل الحسي وملاءمة التواصلية والسلوكية (7-4-1) • لوحة تواصل/كتابة/قراءة (7-4-2) • تجزئة لفترات قصيرة (7-4-3) • التقويم بالخطة الفردية عند التعذر (7-4-4) • مرافقة التربية الخاصة وقراءة الأسئلة وضبط السلوك (7-4-5) • إعداد مشترك للأسئلة (7-4-6).<br><span class='pill'>7-4-1 إلى 7-4-7 (ص 26–27)</span>"},
+{n:6,t:"صعوبات التعلم",g:"dev",gname:"فكرية ونمائية",s:"اضطراب عمليات نفسية • ليست إعاقة أخرى أو بيئية",def:"اضطراب في واحدة أو أكثر من العمليات النفسية (فهم/استخدام اللغة) يظهر في الاستماع والتفكير والكلام والقراءة والكتابة والرياضيات، ولا يعود لفكرية/حسية أو عوامل بيئية/ثقافية/اقتصادية.",acc:"تقرير أكاديمي من معلمي العام والتربية الخاصة (تدني المهارات + فرق عن القدرات + صعوبات عمليات) مع استبعاد الإعاقات والأسباب الأخرى + الحاجة لخدمات البرامج.",place:"فصل التعليم العام + غرفة المصادر ودعم المعلمين (دمج كلي) دون إعاقة أخرى مانعة.",ass:"الاستفادة لمن شُخّص وفق المعتمد (7-8-1، 7-8-2) • قراءة الأسئلة بصوت عالٍ (7-8-5-1) • شفهي/تسجيل صوتي عند صعوبة الكتابة (7-8-5-2) • راحة وسماح بالحركة للنشاط الزائد (7-8-5-6، 7-8-5-7) • تجزئة الحفظ وإعفاء عند التعذر (7-8-5-8) • إشراف معلم الصعوبات وتوزيع وتجزئة (7-8-4، 7-8-5-3، 7-8-5-9).<br><span class='pill'>7-8-1 إلى 7-8-7 (ص 28–30)</span>"},
+{n:7,t:"السلوكية والانفعالية",g:"beh",gname:"سلوكية وتواصلية",s:"سلوك متكرر شديد يخفض التحصيل • دمج كلي",def:"سلوك واحد أو أكثر متكرر ولمدة زمنية وبشدة واضحة يخفض التحصيل: عجز تعلم لغير إعاقة، مشكلات علاقات، سلوك غير ملائم، أعراض جسمية/مخاوف مرتبطة بمشكلات.",acc:"تقرير طبيب نمو وسلوك أو أعصاب معتمد (النوع والشدة) + لا إعاقة أخرى مانعة.",place:"فصل التعليم العام + مصادر ودعم (دمج كلي).",ass:"أدوات تناسب الخصائص (7-5-1) • توزيع على فترات قصيرة (7-5-2) • سماح بالتوقف والتحرك (7-5-3) • ركن خاص بعيداً عن المشتتات (7-5-4) • وجود التربية الخاصة في الختامية (7-5-5) • إشراف مشترك (7-17)."},
+{n:8,t:"الذكاء الحدي (برنامج يسير)",g:"beh",gname:"سلوكية وتواصلية",s:"ذكاء 70–79 • متقن 50%+ • صغرى 30% • دمج كلي",def:"قدرات بين الفكرية والعادية؛ <b>الذكاء 70–79</b> (بينيه 5 أو ما يعادلها) مع تأخر غالباً في كل المواد.",acc:"تقرير تشخيصي (70–79) + رسوب في معظم المواد لغير أسباب أسرية/اجتماعية/صحية؛ والمصاحب النمائي/السلوكي يُدرس من الفريق.",place:"فصل التعليم العام + مصادر ودعم (دمج كلي) ضمن <b>برنامج يسير التعليمي</b>.",ass:"التعليم والاختبار في العام (7-9-2) • تجزئة متعددة الموضوعات (7-9-3) • أسئلة مفاهيم أساسية مشتركة الإعداد (7-9-5، 7-9-6) • مراعاة المشاريع/العملي وإشراك زميل (7-9-4، 7-9-7، 7-9-8) • مكان مستقل وزمن كافٍ وتقسيم يومين (7-9-10) • صياغة مباشرة وإعادة قصيرة/شفوية (7-9-11، 7-9-16).<br><b>الإتقان:</b> 50%+ متقن، <b>30% صغرى</b> للنجاح + <b>15% من النهائي</b>، ودور ثانٍ واحد، وشهادة «يسير»؛ والأول والثاني: تخفيض وتأجيل الحكم. <span class='pill'>7-9-1 إلى 7-9-18 (ص 30–31)</span>"},
+{n:9,t:"اضطرابات اللغة والكلام",g:"beh",gname:"سلوكية وتواصلية",s:"نطق/طلاقة/صوت • بسيطة–شديدة • خدمة مساندة",def:"اضطراب ملحوظ في اللغة (تعبيرية/استقبالية) أو الكلام (نطق/طلاقة/صوت) بدرجات متفاوتة؛ اللغة: خلل فهم/استخدام الرموز؛ الكلام: إصابة الجهاز تعيق إنتاج المفهوم. وقد يجتمعان.",acc:"تقرير طبي معتمد يحدد المشكلة والحاجة للتدخل + لا إعاقة أخرى مانعة.",place:"خدمات معلم النطق/أخصائي اللغة كخدمة مساندة في غرفة المصادر.",ass:"لا مقارنة ولا محاسبة على أخطاء الاضطراب (7-7-1) • استبدال الشفهي بتحريري بالتنسيق (7-7-2) • الاستعانة بالمختص (7-7-3) • إعفاء غير المفهوم/غير اللفظي/التأتأة الاسترسالية (7-7-4، 7-7-5) • تواصل بديل: إشارة/أصبعية/بلس/صور/بصمة عين/تقنية (7-7-6).<br><span class='pill'>7-7-1 إلى 7-7-6 (ص 28)</span>"},
+{n:10,t:"فرط الحركة وتشتت الانتباه",g:"beh",gname:"سلوكية وتواصلية",s:"3 أنماط • ذكاء 80+ • تقويم فردي",def:"اضطراب عصبي سلوكي اجتماعي/نفسي/تعليمي بثلاثة أنماط: تشتت، فرط/اندفاعية، أو كلاهما.",acc:"تقرير تشخيصي معتمد + ذكاء <b>80+</b> (بينيه 5 أو ما يعادلها) + لا إعاقة أخرى مانعة.",place:"فصل التعليم العام + مصادر ودعم (دمج كلي).",ass:"فردي بعيداً عن المشتتات (7-4-7) • فترات قصيرة (7-5-2) • سماح بالحركة (7-5-3) • ركن خاص (7-5-4) • مع الصعوبات: قيام ومشي ثم جلوس (7-8-5-5، 7-8-5-7) • التربية الخاصة في الختامية (7-5-5)."},
+{n:11,t:"تعدد الإعاقة",g:"multi",gname:"متعددة وجسمية",s:"إعاقتان+ • ذكاء 55–69 • سقف 5 • مادة واحدة يومياً",def:"إعاقتان أو أكثر (كفكرية+جسدية أو فكرية+حسية) باحتياجات لا تلبيها برامج النوع الواحد وتحتاج دعماً مكثفاً.",acc:"تقرير تشخيصي: أكثر من إعاقة + ذكاء 55–69؛ <b>يُستثنى</b> الصم المكفوفون (مستقلة) والتوحد+فكرية (توحد منخفض).",place:"فصل خاص أو معاهد (فكرية/صم/مكفوفين) حسب الإعاقة الرئيسة (وسيلة التواصل). <b>السقف: 5</b>.",ass:"تواصل مناسب للمصاحبة (7-3-5) • وفق الخطط الفردية (7-12) • أساليب كل فئة (7-10) • تجزئة (7-13، 7-3-4) • <b>مادة تحريرية واحدة يومياً</b> (7-11) • إعفاء المجرد وإشراف مشترك (7-16، 7-17)."},
+{n:12,t:"الإعاقة الجسمية والصحية",g:"multi",gname:"متعددة وجسمية",s:"إصابة بسيطة/شديدة • الدور الأرضي • أقرب مدرسة",def:"منع من الوظائف الجسمية/الحركية/الصحية يستدعي خدمات متخصصة؛ «الإصابة» بسيطة أو شديدة: عصبي/هيكلي/عضلي، تشوهات، بتر، أمراض مزمنة/حادة، أو مصنفة صحياً.",acc:"تقرير طبي معتمد يحدد المشكلة والإرشادات المدرسية + لا إعاقة أخرى مانعة.",place:"فصل بالدور الأرضي وبيئة مهيأة + أقرب مدرسة للسكن؛ وتُقدَّم الخدمات للمستشفى/المتعذر حضوره.",ass:"أطراف وأجهزة تعويضية (7-6-1) • المكان والزمان المناسبان ومع العام كلما أمكن (7-6-2، 7-6-3) • تجزئة لفترات قصيرة (7-6-4) • إجابة شفهية وكاتب أمين بتكليف المدير (7-6-5) • إعفاء العملي والرسم (7-6-6) • شفهي الإملاء لمشكلات اليدين (7-6-7).<br><span class='pill'>7-6-1 إلى 7-6-7 (ص 27–28)</span>"}
+];
+const T1=[
+["الإعاقة السمعية","تقرير سمع يحدد الفئة والدرجة","ضعاف/قوقعة: دمج كلي — صم: مكاني/معاهد"],
+["الإعاقة البصرية","حدة البصر ومجال الرؤية","ضعاف: دمج كلي — مكفوف: دمج كلي بمصادر/معاهد"],
+["الحسية المزدوجة","بصر (كفيف) + سمع (أصم)","فصل خاص أو معاهد الصم/المكفوفين"],
+["الفكرية","ذكاء 55–69","فصل خاص أو معاهد الفكرية"],
+["التوحد","النوع والذكاء (عالٍ 70+ / منخفض 55–69)","عالٍ: دمج كلي — منخفض: خاص/مراكز"],
+["صعوبات التعلم","تقرير أكاديمي مع استبعاد العوامل","فصل عام + مصادر"],
+["السلوكية والانفعالية","طبيب نمو/سلوك أو أعصاب","فصل عام + مصادر"],
+["الذكاء الحدي","ذكاء 70–79 + رسوب عام","فصل عام + مصادر (يسير)"],
+["اللغة والكلام","يحدد مشكلة النطق/الكلام","مصادر + نطق مساند"],
+["فرط الحركة","تشخيصي + ذكاء 80+","فصل عام + مصادر"],
+["تعدد الإعاقة","أكثر من إعاقة + ذكاء 55–69","فصل خاص/معاهد حسب الرئيسة"],
+["الجسمية والصحية","المشكلة والتوصيات الصحية","دور أرضي مهيأ + أقرب مدرسة"]];
+const T2=[
+["السمعية","إشارة، موضوعية مباشرة، لا محاسبة إملائية، استبدال الاستماع","7-2-1 إلى 7-2-9"],
+["البصرية","برايل/مكبر/قارئ، لجنة قبل أسبوعين","7-1-1 إلى 7-1-8"],
+["المزدوجة","أساليب كل فئة + الخطة الفردية","7-10، 7-12"],
+["الفكرية","تكويني، تجزئة، وفق الفردية","7-3-1 إلى 7-3-5"],
+["التوحد","حسي، تواصل بديل، مرافق، فترات قصيرة","7-4-1 إلى 7-4-7"],
+["الصعوبات","قراءة الأسئلة، شفهي/تسجيل، راحة، تجزئة حفظ","7-8-1 إلى 7-8-7"],
+["السلوكية","فترات قصيرة، حركة، ركن خاص، مرافقة ختامية","7-5-1 إلى 7-5-5"],
+["الحدي","مفاهيم أساسية، مستقل وزمن كافٍ، دور ثانٍ","7-9-1 إلى 7-9-18"],
+["اللغة والكلام","تحريري بدل شفهي، بدائل تواصل، إعفاء استرسال","7-7-1 إلى 7-7-6"],
+["فرط الحركة","فردي بلا مشتتات، حركة، فترات قصيرة","7-4-7، 7-5-2/5-5"],
+["تعدد","الفردية + كل فئة + مادة واحدة يومياً","7-3-5، 7-10/13"],
+["الجسمية","تعويضية، كاتب بديل، إعفاء عملي، تجزئة","7-6-1 إلى 7-6-7"]];
+const QUIZ=[
+{q:"يجوز أن يُختبر ذو الإعاقة في أكثر من مادة تحريرية في اليوم الواحد.",a:false,why:"خطأ — (7-11): مادة تحريرية واحدة يومياً مع الزمن والدعم."},
+{q:"لا يُحاسب الطالب الأصم على الأخطاء الإملائية والنحوية.",a:true,why:"صح — (7-2-5): لا يتأثر التقويم بتركيب لغته المكتوبة."},
+{q:"ألا يزيد عدد الطلاب في فصل الدمج الكلي عن 30 طالباً.",a:true,why:"صح — 30 حد أقصى، و25% سقف ذوي الإعاقة."},
+{q:"تُشكَّل لجنة برايل قبل الاختبارات بأسبوعين على الأقل.",a:true,why:"صح — (7-1-3، 7-1-4) برئاسة المدير."},
+{q:"يُعد طالب يسير ناجحاً إذا حصل على 30% كحد أدنى في جميع المواد بالشروط.",a:true,why:"صح — (7-9-15) مع 15% من النهائي وأداء الفترة."},
+{q:"تتم إحالة الطالب للتقييم دون موافقة ولي الأمر الخطية.",a:false,why:"خطأ — الإحالة بعد موافقة خطية وإشعار رسمي."}];
+let curF="all";
+function renderCats(){
+  const q=(document.getElementById("q").value||"").trim();
+  const g=document.getElementById("catGrid"); g.innerHTML="";
+  CATS.filter(c=>(curF==="all"||c.g===curF)&&(!q||(c.t+c.s+c.def+c.acc+c.place+c.ass).includes(q))).forEach(c=>{
+    const d=document.createElement("div");d.className="cat";
+    d.innerHTML="<div style='display:flex;gap:10px;align-items:center'><div class='n'>"+c.n+"</div><span class='pill'>"+c.gname+"</span></div><h3>"+c.n+" • "+c.t+"</h3><p>"+c.s+"</p><p style='color:var(--teal);font-weight:700;font-size:13px'>اضغط لقراءة البطاقة الإثرائية ←</p>";
+    d.onclick=()=>openM(c); g.appendChild(d);
+  });
+  if(!g.children.length) g.innerHTML="<div class='card'>لا نتائج مطابقة — جرّب كلمة أخرى.</div>";
+}
+function openM(c){
+  document.getElementById("mTitle").textContent="الفئة "+c.n+" من 12 • "+c.t;
+  const tabs=[["لمحة معرفية",c.def],["الأهلية",c.acc],["البيئة التعليمية",c.place],["التيسيرات",c.ass]];
+  const T=document.getElementById("mTabs"),B=document.getElementById("mBody");T.innerHTML="";B.innerHTML="";
+  tabs.forEach((t,i)=>{
+    const b=document.createElement("button");b.className="tab"+(i===0?" active":"");b.textContent=t[0];
+    const p=document.createElement("div");p.className="tabpane"+(i===0?" active":"");p.innerHTML=t[1];
+    b.onclick=()=>{T.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));B.querySelectorAll(".tabpane").forEach(x=>x.classList.remove("active"));b.classList.add("active");p.classList.add("active");};
+    T.appendChild(b);B.appendChild(p);
+  });
+  document.getElementById("modal").classList.add("open");
+}
+function closeM(){document.getElementById("modal").classList.remove("open");}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeM();});
+function tog(id){const el=document.getElementById(id);el.style.display=el.style.display==="block"?"none":"block";}
+let answers={};
+function renderQuiz(){
+  const box=document.getElementById("quiz");box.innerHTML="";answers={};
+  QUIZ.forEach((item,i)=>{
+    const d=document.createElement("div");d.className="quiz-q";
+    d.innerHTML="<b>"+(i+1)+" • "+item.q+"</b><div class='opts'><button class='opt' data-i='"+i+"' data-v='1'>✔ صح</button><button class='opt' data-i='"+i+"' data-v='0'>✖ خطأ</button></div><div class='feedback' id='f"+i+"'></div>";
+    box.appendChild(d);
+  });
+  box.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    const i=b.dataset.i;answers[i]=b.dataset.v==="1";
+    const sib=[...b.parentElement.children];sib.forEach(x=>x.classList.remove("sel-true","sel-false"));
+    b.classList.add(b.dataset.v==="1"?"sel-true":"sel-false");
+  });
+}
+function grade(){
+  let s=0;QUIZ.forEach((it,i)=>{
+    const f=document.getElementById("f"+i);f.style.display="block";
+    if(!(i in answers)){f.style.color="var(--muted)";f.textContent="💡 لم تتأمل هذه العبارة بعد — "+it.why;return;}
+    const ok=answers[i]===it.a;if(ok)s++;
+    f.style.color=ok?"var(--ok)":"var(--bad)";f.textContent=(ok?"✔ إضاءة موفقة — ":"💡 وقفة للتأمل — ")+it.why;
+  });
+  document.getElementById("score").textContent="حصيلة تأملك: "+s+" / "+QUIZ.length+(s===6?" — قراءة واعية 🌟":s>=4?" — فهم جيد":s>=1?" — بداية طيبة، واصل القراءة":" — تصفح البطاقات ثم عاود التأمل");
+}
+function resetQ(){renderQuiz();document.getElementById("score").textContent="";}
+(function init(){
+  renderCats();renderQuiz();
+  document.getElementById("q").addEventListener("input",renderCats);
+  document.querySelectorAll(".fbtn").forEach(b=>b.onclick=()=>{document.querySelectorAll(".fbtn").forEach(x=>x.classList.remove("active"));b.classList.add("active");curF=b.dataset.f;renderCats();});
+  const t1=document.getElementById("t1");T1.forEach(r=>{const tr=document.createElement("tr");r.forEach(c=>{const td=document.createElement("td");td.textContent=c;tr.appendChild(td);});t1.appendChild(tr);});
+  const t2=document.getElementById("t2");T2.forEach(r=>{const tr=document.createElement("tr");r.forEach(c=>{const td=document.createElement("td");td.textContent=c;tr.appendChild(td);});t2.appendChild(tr);});
+  const nav=document.getElementById("mainNav");
+  document.getElementById("menuBtn").onclick=()=>nav.classList.toggle("open");
+  nav.querySelectorAll("a").forEach(a=>a.onclick=()=>nav.classList.remove("open"));
+  const links=[...nav.querySelectorAll("a")];
+  const secs=links.map(a=>document.querySelector(a.getAttribute("href")));
+  window.addEventListener("scroll",()=>{
+    const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+    document.getElementById("progress").style.width=p+"%";
+    document.getElementById("toTop").style.display=h.scrollTop>600?"block":"none";
+    let cur=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<140)cur=i;});
+    links.forEach((a,i)=>a.classList.toggle("active",i===cur));
+  });
+  document.getElementById("toTop").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeM();});
+})();
+</script>
+</body>
+</html>
